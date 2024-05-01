@@ -56,7 +56,7 @@ public class BasicMaths {
     }
     private int countDigitsUsingLog10(int num){
         return (int)Math.log10(num)+1;
-        // TC = O(log(num))
+        // TC = O(log base 10(num))
     }
     private int countDigits(int num){
         int cnt = 0;
