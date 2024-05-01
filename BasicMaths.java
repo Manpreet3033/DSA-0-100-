@@ -9,6 +9,7 @@ public class BasicMaths {
             cnt++;
             n /= 10;
         }
+        // TC = O(log(num))
         n = num;
         while(n > 0){
             int ld = n % 10;
@@ -39,6 +40,8 @@ public class BasicMaths {
     private int reverseNum(int num){
         int revNum = 0;
         while(num != 0){
+            // Edge case as if revNum == 2147483647/10 ie 214748364 then if last digit that is being added
+            // may be greater than 7 which leads to integer overflow so we return 0 for this case
             if(revNum > Integer.MAX_VALUE/10 || revNum < Integer.MIN_VALUE/10) return 0;
             int ld = num % 10;
             revNum = (revNum*10) + ld;
@@ -70,7 +73,7 @@ public class BasicMaths {
         return countDigitsUsingLog10(num);
     }
     private void printAllDivisors(int num){
-        for(int i=1;i<=Math.sqrt(num);i++){
+        for(int i=1;i*i<=num;i++){
             if(num % i == 0){
                 System.out.print(i + " ");
                 if(num/i != i){
