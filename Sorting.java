@@ -60,6 +60,16 @@ public class Sorting {
             }
         }
     }
+
+    void insertionSortRecursive(int[] arr,int i){
+        if(i >= arr.length) return;
+        int j = i;
+        while(j > 0 && arr[j-1] > arr[j]){
+            swap(arr,j,j-1);
+            j--;
+        }
+        insertionSortRecursive(arr, i+1);
+    }
     void merge(int[]arr,int l,int mid,int r){
         ArrayList<Integer> list = new ArrayList<>();
         int left = l,m = mid+1;
@@ -94,14 +104,14 @@ public class Sorting {
     public static void main(String[] args) {
         Sorting sort = new Sorting();
         int[] arr = {6,5,4,3,2,1};
-        for(int i=0;i<arr.length;i++){
-            System.out.print(arr[i] + " ");
+        for (int num : arr) {
+            System.out.print(num + " ");
         }
         System.out.println();
         sort.mergeSort(arr,0,arr.length-1);
         System.out.println();
-        for(int i=0;i<arr.length;i++){
-            System.out.print(arr[i] + " ");
+        for(int num: arr){
+            System.out.print(num + " ");
         }
     }
 }
