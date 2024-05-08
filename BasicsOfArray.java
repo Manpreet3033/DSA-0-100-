@@ -94,7 +94,7 @@ public class BasicsOfArray {
     }
     int OptimalRemoveDuplicatesFromArray(int[] arr){
         // TC -> O(N)
-        // SC -> O(1) -
+        // SC -> O(1)
         int i = 0;
         for(int j=1;j<arr.length;j++){
             if(arr[i] != arr[j]){
