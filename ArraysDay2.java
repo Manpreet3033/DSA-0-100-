@@ -39,6 +39,8 @@ public class ArraysDay2 {
         }
     }
     void OptimalLeftRotateArrayByKPlaces(int[] arr,int k){
+        // TC -> O(K) + O(N-K) + O(N) -> O(N)
+        // SC -> O(1)
         if(k > arr.length) k = k % arr.length;
         reverse(arr,0,k-1);
         reverse(arr,k,arr.length-1);
